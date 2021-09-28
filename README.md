@@ -3,7 +3,7 @@
 
 This is FullStack website for User Management System to 
 manage users and their data like Full Name, Email, Phone
-, Comments, for this we i have used NodeJS, Express and MySQL.
+, and Comments. GFor this we have used NodeJS, Express and MySQL.
 
 
 ## Features
