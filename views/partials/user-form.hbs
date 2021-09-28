@@ -1,0 +1,36 @@
+<div class="col-6">
+        <div class="form-floating">
+            <input type="text" autocomplete="none" value="{{this.first_name}}" class="form-control" id="floatingInput" name="first_name" placeholder="First Name">
+            <label for="floatingInput">First Name</label>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="form-floating">
+            <input type="text" autocomplete="none" value="{{this.last_name}}" class="form-control" id="floatingPassword" name="last_name" placeholder="Last Name">
+            <label for="floatingPassword">Last Name</label>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="form-floating">
+            <input type="text" autocomplete="none" value="{{this.phone}}" class="form-control" id="floatingPassword" name="phone" placeholder="Phone Number">
+            <label for="floatingPassword">Phone Number</label>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="form-floating">
+            <input type="email" autocomplete="none" value="{{this.email}}" class="form-control" id="floatingInput" name="email" placeholder="Email Address">
+            <label for="floatingInput">Email address</label>
+        </div>
+    </div>
+
+    <div class="form-floating my-3">
+        <textarea class="form-control" name="comments" placeholder="Leave a comment here" id="floatingTextarea"style="height: 100px">{{this.comments}}</textarea>
+        <label for="floatingTextarea2">Comments</label>
+    </div>
+    <div class="col-6">
+        <button type="submit" class="btn btn-primary">Add User</button>
+        <a href="/" type="button" class="btn btn-danger">Cancel</a>
+    </div>

@@ -1,0 +1,19 @@
+
+{{#each rows}}
+<h1 class="my-3">Editing {{this.first_name}} {{this.last_name}}</h1>
+{{/each}}
+
+{{#if alert}}
+{{#if userName}}
+<div class="alert alert-success alert-dismissible fade show my-3" role="alert">
+    <strong>{{userName}}</strong> {{alert}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+{{/if}}
+
+{{#each rows}}
+<form method="POST" action="/edituser/{{this.ID}}" class=" row g-3 needs-validation my-3">
+    {{> user-form}}
+</form>
+{{/each}}

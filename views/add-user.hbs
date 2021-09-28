@@ -1,0 +1,11 @@
+<h1 class="my-3">Add New User</h1>
+{{#if alert}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Hey, {{this.first_name}}</strong> {{alert}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+<form method="POST" action="/adduser" class=" row g-3 needs-validation my-3">
+  {{> user-form}}
+</form>
