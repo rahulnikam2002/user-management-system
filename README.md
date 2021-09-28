@@ -21,12 +21,12 @@ manage users and their data like Full Name, Email, Phone
 ```bash
 npm init
 ```
-This command will create a `package.json` file add the following thing: 
+This command will create a `package.json` file and add the following thing: 
 
 Before doing this check the Installation part and then check this
 
 
-Once you install `nodemon` go to `package.json` and inside of `script` and the following line
+Once you install `nodemon` go to `package.json` and inside of `script` add the following line
 ```bash
 "start": "nodemon app.js"
 ```
