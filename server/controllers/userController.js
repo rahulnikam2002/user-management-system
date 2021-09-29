@@ -1,5 +1,6 @@
 const mysql = require('mysql');
 
+//DataBase Connection (we need to connect the database from here also)
 const pool = mysql.createPool({
     connectionLimit: 100,
     host: process.env.DB_HOST,
@@ -8,6 +9,7 @@ const pool = mysql.createPool({
     database: process.env.DB_NAME
 });
 
+//sending data from backend to frontend
 exports.view = (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) throw err;
@@ -25,7 +27,7 @@ exports.view = (req, res) => {
     });
 };
 
-
+//Search functionality
 exports.find = (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) throw err;
@@ -50,6 +52,7 @@ exports.form = (req, res) => {
     res.render('add-user');
 }
 
+//This is for creating a new user
 exports.create = (req, res) => {
     // res.render('add-user')
     const { first_name, last_name, email, phone, comments } = req.body;
@@ -73,6 +76,7 @@ exports.create = (req, res) => {
     });
 }
 
+//When someone clicks on edit user
 exports.edit = (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) throw err;
@@ -90,6 +94,7 @@ exports.edit = (req, res) => {
     });
 }
 
+//This is for updating the users data
 exports.update = (req, res) => {
     const { first_name, last_name, email, phone, comments } = req.body;
     pool.getConnection((err, connection) => {
@@ -121,7 +126,7 @@ exports.update = (req, res) => {
     });
 }
 
-
+//This is for deleting user
 exports.delete = (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) throw err;
@@ -137,3 +142,22 @@ exports.delete = (req, res) => {
         })
     });
 }
+
+
+//This is for View User
+exports.viewall = (req, res) => {
+    pool.getConnection((err, connection) => {
+        if (err) throw err;
+        console.log('Connection Successful and Connected at ID ' + connection.threadId);
+        connection.query('SELECT * FROM user WHERE id = ?',[req.params.id], (err, rows) => {
+            connection.release();
+            if (!err) {
+                res.render('view-user', { rows })
+            }
+            else {
+                console.log(err);
+            }
+            console.log('The data from user table is : \n', rows);
+        })
+    });
+};
