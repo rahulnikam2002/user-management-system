@@ -1,0 +1,15 @@
+
+{{#each rows}}
+<h1 class="my-3">Viewing {{this.first_name}} {{this.last_name}}</h1>
+<div class="card">
+    <h5 class="card-header">User ID = {{this.ID}}</h5>
+    <div class="card-body">
+        <h5 class="card-title">Name</h5><p>{{this.first_name}} {{this.last_name}}</p>
+        <h5 class="card-title">Email</h5><p>{{this.email}}</p>
+        <h5 class="card-title">Phone</h5><p>{{this.phone}}</p>
+        <h5 class="card-title">Comments</h5><p>{{this.comments}}</p>
+        <p class="card-text"></p>
+        <a href="tel:{{this.phone}}" class="btn btn-primary">Call {{this.first_name}}</a>
+    </div>
+</div>
+{{/each}}
