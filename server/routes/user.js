@@ -10,6 +10,7 @@ router.post('/adduser', userControllers.create);
 router.get('/edituser/:id', userControllers.edit);
 router.post('/edituser/:id', userControllers.update);
 router.get('/:id', userControllers.delete);
+router.get('/viewuser/:id', userControllers.viewall);
 
 
 router.get("/about", (req, res)=>{
